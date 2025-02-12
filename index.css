@@ -323,46 +323,72 @@ body {
   }
 }
 
+
+
+
+
+
+/* Controls */
+.envlope-wrapper {
+  height: min(480px, 70vh);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reset {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.reset button {
+  font-weight: 800;
+  background-color: transparent;
+  border: solid 3px #d9534f;
+  border-radius: 8px;
+  color: #d9534f;
+  font-size: clamp(18px, 4vw, 22px);
+  text-transform: uppercase;
+  padding: clamp(15px, 4vw, 20px) clamp(30px, 6vw, 40px);
+  min-width: clamp(140px, 35vw, 180px);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reset button:hover {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+/* Mobile optimizations */
 @media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
   #envelope {
-    width: 300px;
-    height: 200px;
-  }
-
-  .flap {
-    border-left: 150px solid transparent;
-    border-right: 150px solid transparent;
-    border-bottom: 92px solid transparent;
-    border-top: 108px solid #FF00BF;
-  }
-
-  .pocket {
-    border-left: 150px solid #F9629F;
-    border-right: 150px solid #F9629F;
-    border-bottom: 100px solid #FFC0CB;
-    border-top: 100px solid transparent;
+    margin-top: -20px;
   }
 
   .reset {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 0 20px;
+    padding: 0 10px;
+    gap: 20px;
   }
 
   .reset button {
     width: 100%;
-    max-width: 200px;
-    font-size: 16px;
-    padding: 15px 25px;
+    max-width: 280px;
   }
 }
 
-/* Add this to improve touch interaction on mobile */
+/* Touch device optimizations */
 @media (hover: none) and (pointer: coarse) {
   .reset button {
-    padding: 16px 30px; /* Larger touch target */
+    padding: 20px 40px;
   }
 
   #envelope,
